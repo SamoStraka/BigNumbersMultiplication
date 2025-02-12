@@ -1,0 +1,64 @@
+openapi: 3.0.1
+info:
+  title: API documentation for large numbers multiplication
+  description: >
+    This API multiplies two large integer numbers using one of two algorithms.
+    Specify the algorithm via a query parameter:
+    - **alg1**: Uses Java's BigInteger class.
+    - **alg2**: Uses a custom long multiplication implementation.
+  version: 1.0.0
+  contact: {}
+  x-generator:
+    groupId: sk.strakas.multiplication
+    artifactId: water-connection-api
+    apiPackage: sk.strakas.multiplication.api
+    dtoPackage: sk.strakas.multiplication.api.model
+    springBootVersions:
+      - 3.3.0
+servers:
+  - url: http://localhost:8090
+    description: Generated server url
+security:
+  - bearerAuth: []
+paths:
+  /multiply:
+    get:
+      summary: Multiply two large numbers
+      description: >
+        Multiplies two large integer numbers based on the selected algorithm.
+      parameters:
+        - name: algorithm
+          in: query
+          description: >
+            The multiplication algorithm to use.
+          required: true
+          schema:
+            $ref: '#/components/schemas/AlgorithmType'
+        - name: number1
+          in: query
+          description: The first large integer number (as a string).
+          required: true
+          schema:
+            type: string
+            pattern: '^[0-9]+$'
+        - name: number2
+          in: query
+          description: The second large integer number (as a string).
+          required: true
+          schema:
+            type: string
+            pattern: '^[0-9]+$'
+      responses:
+        '200':
+          description: Successful multiplication result
+          content:
+            application/json:
+              schema:
+                type: string
+components:
+  schemas:
+    AlgorithmType:
+      type: string
+      enum:
+        - alg1
+        - alg2
