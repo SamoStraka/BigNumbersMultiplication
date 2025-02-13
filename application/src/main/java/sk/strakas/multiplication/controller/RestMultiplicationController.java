@@ -6,6 +6,7 @@ import sk.strakas.multiplication.api.MultiplyApi;
 import sk.strakas.multiplication.api.model.AlgorithmType;
 import sk.strakas.multiplication.service.MultiplicationService;
 
+
 @RestController
 public class RestMultiplicationController implements MultiplyApi {
 

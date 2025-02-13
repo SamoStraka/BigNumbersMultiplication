@@ -1,11 +1,9 @@
 package sk.strakas.multiplication.calculator;
 
-import org.springframework.stereotype.Component;
 import sk.strakas.multiplication.calculator.multiplication.Multiplication;
 import sk.strakas.multiplication.validation.NumberValidator;
 
 
-@Component
 public class CalculatorFromScratch {
 
     private final Multiplication multiplication = new Multiplication();
@@ -51,6 +49,7 @@ public class CalculatorFromScratch {
 
     /**
      * Adjusts the number by removing leading zeros and white spaces.
+     *
      * @param number the number to adjust
      * @return the adjusted number
      */
@@ -62,6 +61,7 @@ public class CalculatorFromScratch {
 
     /**
      * Strips leading zeros from the number.
+     *
      * @param number the number to strip
      * @return the number without leading zeros
      */

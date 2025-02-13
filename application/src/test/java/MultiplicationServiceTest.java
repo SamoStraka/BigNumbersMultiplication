@@ -2,7 +2,6 @@ import org.junit.jupiter.api.Assertions;
 import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.Test;
 import sk.strakas.multiplication.api.model.AlgorithmType;
-import sk.strakas.multiplication.calculator.CalculatorFromScratch;
 import sk.strakas.multiplication.service.MultiplicationService;
 
 public class MultiplicationServiceTest {
@@ -10,7 +9,7 @@ public class MultiplicationServiceTest {
 
     @BeforeEach
     void setUp() {
-        multiplicationService = new MultiplicationService(new CalculatorFromScratch());
+        multiplicationService = new MultiplicationService();
     }
 
     @Test

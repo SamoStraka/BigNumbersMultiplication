@@ -40,14 +40,14 @@ paths:
           required: true
           schema:
             type: string
-            pattern: '^[0-9]+$'
+            pattern: '^-?[0-9]+$'
         - name: number2
           in: query
           description: The second large integer number (as a string).
           required: true
           schema:
             type: string
-            pattern: '^[0-9]+$'
+            pattern: '^-?[0-9]+$'
       responses:
         '200':
           description: Successful multiplication result
@@ -60,5 +60,5 @@ components:
     AlgorithmType:
       type: string
       enum:
-        - alg1
-        - alg2
+        - ALG1
+        - ALG2
